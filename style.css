@@ -15,8 +15,9 @@ body {
     min-height: 100vh;
     background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
             url("Don Pickens - Flyer 1.jpeg");
-    background-size: 70% cover;
-    background-position: 55% center;
+   background-size: contain;
+background-repeat: no-repeat;
+background-position: center center;
 }
 
 nav {
