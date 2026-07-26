@@ -1,64 +1,404 @@
-.hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
+/* =========================
+   GLOBAL RESET
+========================= */
 
-    background:
-        linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)),
-        url("Don Pickens - Flyer 1.jpeg");
-
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: right center;
-
-    background-color: #000;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.hero-content {
-    width: 320px;
-    height: 100vh;
+html {
+    scroll-behavior: smooth;
+}
 
-    background: #000;
+body {
+    background: #050505;
+    color: #f5f5f5;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+}
+
+
+/* =========================
+   HERO / HOMEPAGE
+========================= */
+
+.hero {
+    min-height: 100vh;
+    position: relative;
+    background-color: #000;
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+        url("Don Pickens - Flyer 1.jpeg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav {
+    min-height: 90px;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 20px 10%;
+}
+
+nav h1 {
+    color: #d4af37;
+    font-size: 2rem;
+    line-height: 1;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    list-style: none;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.25s ease;
+}
+
+nav a:hover {
+    color: #d4af37;
+}
+
+
+/* =========================
+   HERO TEXT
+========================= */
+
+.hero-content {
+    width: 290px;
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-42%);
+    z-index: 5;
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: flex-start;
 
-    padding: 0 45px;
+    color: #fff;
 }
 
-.hero-content h1 {
+.hero-content h2,
+.hero-content .eyebrow {
     color: #d4af37;
-    font-size: 3rem;
-    margin-bottom: 20px;
-}
-
-.hero-content h2 {
-    color: #d4af37;
-    font-size: 1.1rem;
+    font-size: 1rem;
+    font-weight: 500;
     letter-spacing: 2px;
-    margin-bottom: 25px;
     text-transform: uppercase;
+    margin-bottom: 26px;
 }
 
 .hero-content p {
     color: #fff;
-    line-height: 1.8;
-    margin-bottom: 35px;
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 28px;
 }
 
-.hero-content .btn {
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn,
+button {
     display: inline-block;
     width: fit-content;
-    background: #d4af37;
-    color: #000;
-    padding: 15px 35px;
+
+    padding: 14px 28px;
+
+    background: #e1b82f;
+    color: #080808;
+
+    border: none;
     border-radius: 6px;
+
+    font-size: 1rem;
+    font-weight: 700;
     text-decoration: none;
-    font-weight: bold;
-    transition: .3s;
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease;
 }
 
-.hero-content .btn:hover {
-    background: #f2c94c;
+.btn:hover,
+button:hover {
+    background: #f0ca45;
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   GENERAL SECTIONS
+========================= */
+
+section {
+    padding: 90px 10%;
+}
+
+section h2 {
+    color: #d4af37;
+    font-size: 2.3rem;
+    margin-bottom: 24px;
+}
+
+section h3 {
+    color: #d4af37;
+    margin-bottom: 12px;
+}
+
+section p {
+    max-width: 760px;
+    margin-bottom: 18px;
+}
+
+
+/* =========================
+   MUSIC SECTION
+========================= */
+
+.music {
+    background: #0c0c0c;
+    text-align: center;
+}
+
+.music h2 {
+    text-align: center;
+}
+
+.music-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+    margin-top: 35px;
+}
+
+.music-card {
+    background: #151515;
+    padding: 24px;
+    border: 1px solid #292929;
+    border-radius: 10px;
+}
+
+.music-card img {
+    width: 100%;
+    display: block;
+    border-radius: 6px;
+    margin-bottom: 18px;
+}
+
+audio {
+    width: 100%;
+    margin-top: 12px;
+}
+
+
+/* =========================
+   VIDEO
+========================= */
+
+.video-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 35px auto 0;
+}
+
+.video-container video,
+.video-container iframe {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+}
+
+
+/* =========================
+   ABOUT SECTION
+========================= */
+
+.about {
+    background: #080808;
+}
+
+.about-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+
+/* =========================
+   CONTACT SECTION
+========================= */
+
+.contact {
+    background: #111;
+    text-align: center;
+}
+
+.contact p {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact a {
+    color: #d4af37;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #000;
+    color: #aaa;
+    min-height: 110px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px 10%;
+    text-align: center;
+    border-top: 1px solid #222;
+}
+
+footer a {
+    color: #d4af37;
+    text-decoration: none;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 950px) {
+    .hero {
+        background-size: auto 100%;
+        background-position: center center;
+    }
+
+    nav {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .hero-content {
+        left: 5%;
+        width: 250px;
+    }
+
+    .music-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+    .hero {
+        min-height: auto;
+        padding-bottom: 50px;
+
+        background-size: contain;
+        background-position: center top;
+    }
+
+    nav {
+        min-height: auto;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+
+        padding: 22px 6%;
+        background: rgba(0, 0, 0, 0.85);
+    }
+
+    nav h1 {
+        font-size: 1.7rem;
+    }
+
+    nav ul {
+        width: 100%;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .hero-content {
+        width: calc(100% - 12%);
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+
+        margin: 420px 6% 0;
+        padding: 28px;
+
+        background: rgba(0, 0, 0, 0.92);
+        border-left: 4px solid #d4af37;
+    }
+
+    section {
+        padding: 65px 6%;
+    }
+
+    .music-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 430px) {
+    .hero-content {
+        margin-top: 330px;
+    }
+
+    nav ul {
+        gap: 14px;
+    }
+
+    nav a {
+        font-size: 0.9rem;
+    }
+
+    section h2 {
+        font-size: 1.9rem;
+    }
 }
